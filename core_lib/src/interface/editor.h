@@ -171,7 +171,7 @@ public: //slots
 
     void setModified(int layerNumber, int frameNumber);
 
-    void clearCurrentFrame();
+    void clearCurrentFrameOrSelection();
 
     Status importImage(const QString& filePath);
     Status importGIF(const QString& filePath, int numOfImages = 0);

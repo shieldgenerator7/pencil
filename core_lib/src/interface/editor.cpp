@@ -1287,9 +1287,15 @@ void Editor::prepareSave()
     }
 }
 
-void Editor::clearCurrentFrame()
+void Editor::clearCurrentFrameOrSelection()
 {
-    mScribbleArea->clearImage();
+    if (mSelectionManager->somethingSelected()){
+        mScribbleArea->deleteSelection();
+        deselectAll();
+    }
+    else{
+        mScribbleArea->clearImage();
+    }
 }
 
 bool Editor::canCopy() const
